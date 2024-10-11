@@ -22,7 +22,7 @@ export default function Button(props: {
   onClick?: () => void;
   /**
    * 按钮样式
-   * @default primary
+   * @default "primary"
    */
   type?: 'primary' | 'secondary';
   /** 自定义样式 */

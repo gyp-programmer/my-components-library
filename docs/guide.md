@@ -44,15 +44,15 @@ export default () => (
 :::code-group
 
 ```bash [npm]
-npm install -D gyp-ui
+npm install -D gyp-gao-ui
 ```
 
 ```bash [yarn]
-yarn add -D gyp-ui
+yarn add -D gyp-gao-ui
 ```
 
 ```bash [pnpm]
-pnpm add -D gyp-ui
+pnpm add -D gyp-gao-ui
 ```
 
 :::

@@ -1,7 +1,7 @@
-# gyp-ui
+# gyp-gao-ui
 
-[![NPM version](https://img.shields.io/npm/v/gyp-ui.svg?style=flat)](https://npmjs.org/package/gyp-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/gyp-ui.svg?style=flat)](https://npmjs.org/package/gyp-ui)
+[![NPM version](https://img.shields.io/npm/v/gyp-gao-ui.svg?style=flat)](https://npmjs.org/package/gyp-gao-ui)
+[![NPM downloads](http://img.shields.io/npm/dm/gyp-gao-ui.svg?style=flat)](https://npmjs.org/package/gyp-gao-ui)
 
 特定场景使用的组件库，非元组件组件库
 

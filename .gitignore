@@ -1,6 +1,8 @@
 node_modules
 /dist
+docs_dist
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
 .DS_Store
+

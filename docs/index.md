@@ -19,4 +19,4 @@ features:
     description: Put ! description here
 ---
 
-gyp-ui
+gyp-gao-ui

@@ -7,7 +7,7 @@
  * title: 按钮
  * description: 可以通过`type`来决定想用的类型
  */
-import { Button } from 'gyp-ui';
+import { Button } from 'gyp-gao-ui';
 
 export default () => (
   <>

@@ -10,9 +10,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  outputPath: 'docs-dist',
+  outputPath: 'docs_dist',
   themeConfig: {
-    name: 'gyp-ui',
+    name: 'gyp-gao-ui',
   },
   apiParser: {},
   resolve: {

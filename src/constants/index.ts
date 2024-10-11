@@ -6,4 +6,4 @@
  * 
  * Copyright © 2019-2024 bvox.com. All Rights Reserved.
  */
-export const comp_className = 'gyp-ui-';
+export const comp_className = 'gyp-gao-ui-';

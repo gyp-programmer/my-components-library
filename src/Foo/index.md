@@ -3,7 +3,7 @@
 This is an example component.
 
 ```jsx
-import { Foo } from 'gyp-ui';
+import { Foo } from 'gyp-gao-ui';
 
 export default () => <Foo title="Hello dumi!" />
 ```

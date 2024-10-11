@@ -8,8 +8,8 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "gyp-ui": ["src"],
-      "gyp-ui/*": ["src/*", "*"]
+      "gyp-gao-ui": ["src"],
+      "gyp-gao-ui/*": ["src/*", "*"]
     }
   },
   "include": [".dumirc.ts", "src/**/*"]
