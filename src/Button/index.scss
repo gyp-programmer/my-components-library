@@ -1,0 +1,22 @@
+.gyp-ui-button {
+    padding: 8px 12px;
+    background-color: aquamarine;
+    width: fit-content;
+    border-radius: 4px;
+    cursor: pointer;
+
+    button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &-primary {
+        background-color: #007bff;
+    }
+}
