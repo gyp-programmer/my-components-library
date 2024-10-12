@@ -23,10 +23,15 @@ export interface IRichTextProps {
    * @default '请输入内容'
    */
   placeholder?: string;
+  /**
+   * 富文本内容变化回调
+   * @param html 富文本内容
+   */
+  onChange?: (html: string) => void;
 }
 
 export default function RichText(props: IRichTextProps) {
-  const { defaultContent = '', placeholder = '请输入内容' } = props;
+  const { defaultContent = '', placeholder = '请输入内容', onChange } = props;
   // editor 实例
   const [editor, setEditor] = useState<IDomEditor | null>(null);
   // 编辑器内容
@@ -47,7 +52,9 @@ export default function RichText(props: IRichTextProps) {
   }, [editor]);
 
   const handleChange = (editor: IDomEditor) => {
-    setHtml(editor.getHtml());
+    const h = editor.getHtml();
+    setHtml(h);
+    onChange && onChange(h);
   };    
 
   return (

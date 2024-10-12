@@ -10,7 +10,7 @@ import { RichText } from 'gyp-gao-ui';
 
 export default () => (
   <>
-    <RichText />
+    <RichText onChange={(value) => {console.log(value)}} />
   </>
 );
 ```

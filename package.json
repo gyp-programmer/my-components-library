@@ -1,6 +1,6 @@
 {
   "name": "gyp-gao-ui",
-  "version": "0.0.1",
+  "version": "0.0.2-beta.1",
   "description": "特定场景使用的组件库，非元组件组件库",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
