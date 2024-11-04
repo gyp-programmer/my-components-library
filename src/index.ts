@@ -11,3 +11,4 @@ export { default as Foo } from './Foo';
 export { default as Button } from './Button';
 export { default as RichText } from './rich-text';
 export { default as RichTextRender } from './rich-text-render';
+export { default as Reader } from './reader';

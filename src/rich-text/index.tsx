@@ -10,7 +10,6 @@ import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor';
 import { Editor, Toolbar } from '@wangeditor/editor-for-react';
 import '@wangeditor/editor/dist/css/style.css';
 import React, { useEffect, useState } from 'react';
-import './index.scss';
 
 export interface IRichTextProps {
   /**
