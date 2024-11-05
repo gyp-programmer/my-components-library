@@ -7,7 +7,7 @@
  * Copyright © 2019-2024 bvox.com. All Rights Reserved.
  */
 
-export { default as Foo } from './Foo';
+export { default as AutoSkeleton } from './auto-skeleton';
 export { default as Button } from './Button';
 export { default as RichText } from './rich-text';
 export { default as RichTextRender } from './rich-text-render';
