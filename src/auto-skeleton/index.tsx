@@ -11,14 +11,22 @@ import React, { useEffect, useRef, useState } from 'react';
 import { comp_className } from '../constants';
 import './index.scss';
 import { Image, Text, imageTypes, textTypes } from './skeleton';
+import { nanoid } from 'nanoid';
 
 export interface IAutoSkeletonProps {
   /** 生成骨架屏完成 */
-  onComplete: () => void;
+  onComplete?: () => void;
+  /**
+   * 加载中
+   * @default true
+   */
+  loading: boolean;
+  /** 加载完成回调 */
+  onLoadingSuccess?: () => void;
 }
 
 function AutoSkeleton(props: IAutoSkeletonProps) {
-  const { onComplete } = props;
+  const { onComplete, loading = true, onLoadingSuccess } = props;
   const [showMenu, setShowMenu] = useState(false);
   const [currentPoint, setCurrentPoint] = useState<{ x: number; y: number }>({
     x: 0,
@@ -26,7 +34,6 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
   });
   const currentRef = useRef<HTMLDivElement>(null);
   const [skeleton, setSkeleton] = useState<any>();
-
   const genSkeleton = () => {
     if (!currentRef.current) return;
     const parent = currentRef.current.parentElement;
@@ -43,10 +50,10 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
             return getSkeletonSon(Array.from(k.children), k);
           }
           if (imageTypes.includes(k.nodeName.toLowerCase())) {
-            return <Image key={k.id} />;
+            return <Image key={nanoid()} />;
           }
           if (textTypes.includes(k.nodeName.toLowerCase())) {
-            return <Text key={k.id} />;
+            return <Text key={nanoid()} />;
           }
 
           return null;
@@ -55,7 +62,7 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
       const style = getComputedStyle(parent);
       return (
         <div
-          key={parent.id}
+          key={nanoid()}
           style={{
             display: 'flex',
             width: style.width,
@@ -80,10 +87,10 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
             return getSkeletonSon(Array.from(o.children), o);
           }
           if (imageTypes.includes(o.nodeName.toLowerCase())) {
-            return <Image key={o.id} />;
+            return <Image key={nanoid()} />;
           }
           if (textTypes.includes(o.nodeName.toLowerCase())) {
-            return <Text key={o.id} />;
+            return <Text key={nanoid()} />;
           }
 
           return null;
@@ -95,10 +102,18 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
 
     setSkeleton(skeletonContent);
     setTimeout(() => {
-      onComplete();
+      onComplete && onComplete();
       setShowMenu(false);
     }, 0);
   };
+
+  useEffect(() => {
+    if (loading) {
+      genSkeleton();
+    } else {
+      onLoadingSuccess && onLoadingSuccess();
+    }
+  }, [loading]);
 
   const renderMenu = () => {
     return (
@@ -156,16 +171,18 @@ function AutoSkeleton(props: IAutoSkeletonProps) {
   };
 
   return (
-    <div
-      className={`${comp_className}auto-skeleton`}
-      onContextMenu={handleMenu}
-      ref={currentRef}
-      onClick={handleClick}
-      style={{ position: skeleton ? 'relative' : 'absolute' }}
-    >
-      {skeleton}
-      {showMenu && renderMenu()}
-    </div>
+    loading && (
+      <div
+        className={`${comp_className}auto-skeleton`}
+        onContextMenu={handleMenu}
+        ref={currentRef}
+        onClick={handleClick}
+        style={{ position: skeleton ? 'relative' : 'absolute' }}
+      >
+        {skeleton}
+        {showMenu && renderMenu()}
+      </div>
+    )
   );
 }
 
